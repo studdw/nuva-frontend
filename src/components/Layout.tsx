@@ -13,5 +13,24 @@ export default function Layout() {
         window.scrollTo(0, 0);
     }, [pathname]);
 
+    return (
+        <div className="flex min-h-screen flex-col">
+            <Header />
+
+            {mensagem && (
+                <div className="container-page pt-6">
+                    <Aviso texto={mensagem} tipo="erro" />
+                </div>
+            )}
+
+            <main className="flex-1">
+                <Outlet />
+            </main>
+
+            <Footer />
+        </div>
+    );
+}
+
 
 
