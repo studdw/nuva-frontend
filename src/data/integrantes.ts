@@ -42,8 +42,8 @@ export const integrantes: Integrante[] = [
   rm: '573347',
   turma: '1TDSPV',
   foto: 'https://media.licdn.com/dms/image/v2/D4D03AQE74WGo9OpVdw/profile-displayphoto-crop_800_800/B4DZyLRNFuJkAM-/0/1771863069648?e=1792627200&v=beta&t=hIGHV1XHWyP578WOqVrr1NFCfmFUec227EF44TEcePc',
-  github: '',
-  linkedin: 'https://www.linkedin.com/in/-cabral-660940350/',
+  github: 'https://github.com/LucasCabral0603',
+  linkedin: 'https://www.linkedin.com/in/lucas-cabral-660940350/',
   papel: 'UI/UX e Produto',
   },
 ];
