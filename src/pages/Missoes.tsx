@@ -5,8 +5,7 @@ import { useApi } from '../hooks/useApi';
 import { corFundo } from '../data/conteudo';
 import { CabecalhoPagina, Seta } from '../components/ui';
 import { Carregando, ErroApi } from '../components/Estado';
-
-const hoje = () => new Date().toISOString().slice(0, 10);
+import { hojeNoBrasil } from '../utils/data';
 
 export default function Missoes() {
   const [filtro, setFiltro] = useState('Todas');
@@ -15,7 +14,7 @@ export default function Missoes() {
 
   // missões já validadas hoje pelo usuário
   const concluidasHoje = new Set(
-    (validacoes ?? []).filter((v) => v.status === 'VALIDADO' && v.dataEnvio.startsWith(hoje())).map((v) => v.missaoId),
+    (validacoes ?? []).filter((v) => v.status === 'VALIDADO' && v.dataEnvio.startsWith(hojeNoBrasil())).map((v) => v.missaoId),
   );
 
   const categorias = ['Todas', ...new Set((missoes ?? []).map((m) => m.categoria))];

@@ -45,7 +45,7 @@ export default function Carteira() {
         <div className="card-feature flex min-h-[360px] flex-col justify-between bg-iris text-pure">
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-75">Saldo disponível</p>
           <div>
-            <p className="font-titulo text-[72px] font-light leading-none md:text-[96px]">{carteira ? saldo.toLocaleString('pt-BR') : '—'}</p>
+            <p className="font-titulo text-[72px] font-light leading-none md:text-[96px]">{saldo.toLocaleString('pt-BR')}</p>
             <p className="mt-3 font-mono text-sm opacity-80">SoulCoins ≈ {emReais(saldo)} de desconto</p>
           </div>
         </div>

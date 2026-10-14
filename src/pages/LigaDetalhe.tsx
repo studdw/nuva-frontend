@@ -23,10 +23,11 @@ export default function LigaDetalhe() {
 
   const minhaLiga = usuario?.ligaId === ligaId;
   const lider = ranking?.[0]?.pontosSemana || 1;
+  const ligaLotada = Boolean(liga && liga.participantes >= liga.maxParticipantes);
 
   // PUT /usuarios/{id} trocando a liga (regra: 1 liga por usuário, máx. 200 participantes)
   const entrar = async () => {
-    if (!usuario) return;
+    if (!usuario || ligaLotada) return;
     setSalvando(true);
     setMsg(null);
     try {
@@ -88,8 +89,10 @@ export default function LigaDetalhe() {
               <p className="text-sm text-cloud">Você já compete nesta liga.</p>
             ) : (
               <>
-                <p className="text-sm">Mudou de bairro? Troque de liga — você sai da liga atual.</p>
-                <button onClick={entrar} disabled={salvando || !usuario} className="btn-primario">Entrar nesta liga <Seta /></button>
+                <p className="text-sm">{ligaLotada ? 'Esta liga atingiu o limite de participantes.' : 'Mudou de bairro? Troque de liga — você sai da liga atual.'}</p>
+                <button onClick={entrar} disabled={salvando || !usuario || ligaLotada} className="btn-primario">
+                  {ligaLotada ? 'Liga lotada' : 'Entrar nesta liga'} <Seta />
+                </button>
               </>
             )}
             {msg && <Aviso tipo={msg.tipo} texto={msg.t} />}

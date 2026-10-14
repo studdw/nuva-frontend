@@ -7,9 +7,9 @@ import { useCarteira } from '../context/CarteiraContext';
 import { Aviso, BotaoLink, Seta } from '../components/ui';
 import { ErroApi } from '../components/Estado';
 import type { Validacao } from '../types';
+import { hojeNoBrasil } from '../utils/data';
 
 const MAX_TENTATIVAS = 3;
-const hoje = () => new Date().toISOString().slice(0, 10);
 
 export default function MissaoDetalhe() {
   const { id } = useParams<{ id: string }>();
@@ -30,7 +30,7 @@ export default function MissaoDetalhe() {
     return <Navigate to="/missoes" replace state={{ mensagem: `A missão “${id}” não existe. Escolha uma das missões disponíveis.` }} />;
   }
 
-  const deHoje = (validacoes ?? []).filter((v) => v.missaoId === missaoId && v.dataEnvio.startsWith(hoje()));
+  const deHoje = (validacoes ?? []).filter((v) => v.missaoId === missaoId && v.dataEnvio.startsWith(hojeNoBrasil()));
   const usadas = deHoje.length;
   const feita = deHoje.some((v) => v.status === 'VALIDADO');
   const esgotou = usadas >= MAX_TENTATIVAS && !feita;
