@@ -70,7 +70,7 @@ src/
 ## 🚀 Como usar
 
 - **GitHub:** https://github.com/studdw/nuva-guardioes-da-luz
-- **YouTube:** 
+- **YouTube:** https://www.youtube.com/watch?v=ApZ-sgT1jLw
 - **Vercel:** https://nuva-guardioes-da-luz.vercel.app
 
 ```bash
