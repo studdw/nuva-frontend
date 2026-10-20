@@ -69,12 +69,12 @@ src/
 
 ## 🚀 Como usar
 
-- **GitHub:** https://github.com/studdw/nuva-guardioes-da-luz
+- **GitHub:** https://github.com/studdw/nuva-frontend
 - **YouTube:** https://www.youtube.com/watch?v=ApZ-sgT1jLw
 - **Vercel:** https://nuva-guardioes-da-luz.vercel.app
 
 ```bash
-git clone https://github.com/studdw/nuva-guardioes-da-luz.git
+git clone https://github.com/studdw/nuva-frontend.git
 cd nuva-guardioes-da-luz
 npm install
 cp .env.example .env      # ajuste VITE_API_URL
