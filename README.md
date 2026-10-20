@@ -70,7 +70,7 @@ src/
 ## 🚀 Como usar
 
 - **GitHub:** https://github.com/studdw/nuva-frontend
-- **YouTube:** https://www.youtube.com/watch?v=ApZ-sgT1jLw
+- **YouTube:** https://www.youtube.com/watch?v=z33Z6AzS2Ic
 - **Vercel:** https://nuva-guardioes-da-luz.vercel.app
 
 ```bash
